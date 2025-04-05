@@ -1,0 +1,46 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US10 - Assign a selected train to a route as a Player
+
+autonumber
+
+actor "Player " as Player
+participant ":System" as System
+
+activate Player
+
+    Player -> System : asks to select train
+    activate System
+
+        System --> Player : requests data (trainName)
+    deactivate System
+
+    Player->System: type data (trainName)
+    activate System
+
+     System --> Player : Requests to assign train to a route
+        deactivate System
+
+        Player->System: Assign Selected train to a route
+        activate System
+
+        System --> Player : Validation of stations
+
+
+
+        System --> Player : displays the data and requests confirmation
+        deactivate System
+
+
+
+
+    Player -> System : confirms data
+    activate System
+
+        System --> Player : displays operation success
+    deactivate System
+
+@enduml

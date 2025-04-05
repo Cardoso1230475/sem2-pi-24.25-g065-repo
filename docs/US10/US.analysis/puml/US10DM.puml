@@ -1,0 +1,33 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+hide methods
+
+title Domain Model
+
+class Player {
+idPlayer
+name
+}
+
+class Route{
+    routeID
+    name
+}
+
+class Train{
+    trainID
+    name
+}
+
+
+
+
+
+Player "1" -- "1..*" Route  : Assign >
+Route "1" -- "1..*" Train  : To >
+
+@enduml
