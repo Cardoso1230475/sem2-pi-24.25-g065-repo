@@ -1,0 +1,35 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US09 - Buy a Locomotive as a Player
+
+autonumber
+
+actor "Editor (EDIT)" as EDIT
+participant ":System" as System
+
+activate EDIT
+
+    EDIT -> System : asks to buy a locomotive
+    activate System
+
+        System --> EDIT : shows data (list(locomotive))
+    deactivate System
+
+    EDIT->System: type data (name)
+    activate System
+
+        System --> EDIT : displays the data and requests confirmation
+
+    deactivate System
+
+
+    EDIT -> System : confirms data
+    activate System
+
+        System --> EDIT : displays operation success
+    deactivate System
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+hide circle
+hide methods
+
+title Domain Model
+
+class Player {
+idPlayer
+name
+
+}
+
+class Editor {
+idEditor
+name
+}
+
+class Locomotive{
+    name
+
+}
+
+
+Locomotive "1" -- "1..*" Player : Buys <
+Editor "1" -- "1..*" Locomotive  : Registers >
+
+
+@enduml
