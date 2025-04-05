@@ -9,6 +9,8 @@ hide methods
 title Domain Model
 
 class Editor {
+idEditor
+name
 }
 
 class Map{

@@ -1,7 +1,5 @@
 # US01 - Create a Map
 
-_XXX stands for User Story number and YYY for User Story description (e.g. US006 - Create a Task)_
-
 ## 1. Requirements Engineering
 
 ### 1.1. User Story Description
