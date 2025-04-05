@@ -1,0 +1,41 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US01 - Create a Map
+
+autonumber
+
+actor "Editor (EDIT)" as EDIT
+participant ":System" as System
+
+activate EDIT
+
+    EDIT -> System : asks to register a new Map
+    activate System
+
+        System --> EDIT : requests data (name)
+    deactivate System
+
+    EDIT->System: type data (name)
+    activate System
+
+     System --> EDIT : requests data (Size)
+        deactivate System
+
+        EDIT->System: type data (Size)
+        activate System
+
+        System --> EDIT : displays the data and requests confirmation
+
+    deactivate System
+
+
+    EDIT -> System : confirms data
+    activate System
+
+        System --> EDIT : displays operation success
+    deactivate System
+
+@enduml
